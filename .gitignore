@@ -1,0 +1,6 @@
+.idea/
+
+# created by virtualenv automatically
+/*
+!/sdk_py
+!requirements.txt
