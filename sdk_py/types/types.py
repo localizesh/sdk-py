@@ -25,7 +25,6 @@ class LayoutElement:
         self.value = value
         self.type = type
         self.tagName = tagName
-        self.tags = tags if tags is not None else {}
         self.children = children
         self.properties = properties if properties is not None else {}
 
