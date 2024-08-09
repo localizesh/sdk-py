@@ -1,7 +1,7 @@
-from .types.types import (
-    Context, Document, Layout, Processor, Segment, LayoutElement, LayoutSegment
-)
+from .types import *
+from .convert_to_proto import *
+from .convert_from_proto import *
 
-from .utils.generate_id import (
+from .generate_id import (
     IdGenerator
 )
