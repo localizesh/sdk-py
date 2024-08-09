@@ -10,9 +10,9 @@ class Segment:
         self.text = text
         self.tags = tags if tags is not None else {}
 
-class Layout:
-    def __init__(self, type: str, children: List[Union['LayoutElement', 'LayoutSegment']]):
-        self.type = type
+class LayoutRoot:
+    def __init__(self, children: List[Union['LayoutElement', 'LayoutSegment']]):
+        self.type = "root"
         self.children = children
 
 class LayoutSegment:
@@ -31,7 +31,7 @@ class LayoutElement:
 Context = Dict
 
 class Document:
-    def __init__(self, segments: List[Segment], layout: Layout, metadata: Optional[Dict] = None):
+    def __init__(self, segments: List[Segment], layout: LayoutRoot, metadata: Optional[Dict] = None):
         self.segments = segments
         self.layout = layout
         self.metadata = metadata if metadata is not None else {}
