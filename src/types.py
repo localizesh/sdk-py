@@ -10,14 +10,9 @@ class Segment:
         self.text = text
         self.tags = tags if tags is not None else {}
 
-class LayoutRoot:
-    def __init__(self, children: List[Union['LayoutElement', 'LayoutSegment']]):
-        self.type = "root"
-        self.children = children
-
 class LayoutSegment:
-    def __init__(self, type: str, id: str):
-        self.type = type
+    def __init__(self, id: str):
+        self.type = "segment"
         self.id = id
 
 class LayoutElement:
@@ -27,6 +22,11 @@ class LayoutElement:
         self.tagName = tagName
         self.children = children
         self.properties = properties if properties is not None else {}
+
+class LayoutRoot:
+    def __init__(self, children: List[LayoutElement | LayoutSegment]):
+        self.type = "root"
+        self.children = children
 
 Context = Dict
 
