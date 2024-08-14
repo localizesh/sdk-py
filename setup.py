@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='localizesh-sdk',
-    version='0.0.4',
+    version='0.0.5',
     description="Sdk",
     package_dir={"localizesh_sdk": "src"},
     long_description=open('README.md').read(),
