@@ -15,7 +15,7 @@ class LayoutNode:
         self.type = type
 
 class LayoutSegment(LayoutNode):
-    def __init__(self, type: str, id: str):
+    def __init__(self, id: str):
         LayoutNode.__init__(self, 'segment')
         self.id = id
 
@@ -28,7 +28,7 @@ class LayoutElement(LayoutNode):
         self.properties = properties if properties is not None else {}
 
 class LayoutRoot(LayoutNode):
-    def __init__(self, type: str, children: List[LayoutElement | LayoutSegment]):
+    def __init__(self, children: List[LayoutElement | LayoutSegment]):
         LayoutNode.__init__(self, 'root')
         self.children = children
 
