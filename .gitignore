@@ -1,5 +1,7 @@
 .idea/
 
+/src/protos
+
 # created by virtualenv automatically
 /*
 !/src

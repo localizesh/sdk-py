@@ -1,7 +1,7 @@
 import json
 from .types import Document
-from localize.segment_pb2 import Segment as ProtoSegment
-from localize.document_pb2 import Document as ProtoDocument
+from .protos.localize.segment_pb2 import Segment as ProtoSegment
+from .protos.localize.document_pb2 import Document as ProtoDocument
 from google.protobuf import struct_pb2
 
 
