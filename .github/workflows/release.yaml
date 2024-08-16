@@ -10,6 +10,9 @@ jobs:
       - uses: ./.github/actions/build
         with:
           version: ${{ github.event.release.tag_name }}
+      - uses: actions/upload-artifact@v4
+        with:
+          path: dist/*
       - run: twine upload dist/*
         env:
           TWINE_USERNAME: __token__
