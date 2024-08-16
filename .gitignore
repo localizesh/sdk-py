@@ -4,6 +4,8 @@
 
 # created by virtualenv automatically
 /*
+!/.github
 !/src
 !requirements.txt
 !fix-imports.py
+
