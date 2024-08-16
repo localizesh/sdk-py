@@ -1,12 +1,7 @@
 version: v2
 clean: true
-managed:
-  enabled: true
-  override:
-    - file_option: optimize_for
-      value: CODE_SIZE
 plugins:
-  - remote: buf.build/protocolbuffers/python
+  - protoc_builtin: python
     out: src/protos
 
 inputs:
