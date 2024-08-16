@@ -16,6 +16,7 @@ runs:
         cache: pip
         cache-dependency-path: setup.py
     - uses: bufbuild/buf-setup-action@v1.36.0
+    - uses: arduino/setup-protoc@v3
     - run: pip install setuptools twine
       shell: bash
     - run: buf generate
