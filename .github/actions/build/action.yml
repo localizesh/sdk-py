@@ -7,6 +7,7 @@ inputs:
     default: ${{ github.token }}
   version:
     description: Build version
+    default: '0.0.0'
 
 runs:
   using: composite
