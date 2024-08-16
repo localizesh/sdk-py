@@ -1,0 +1,8 @@
+version: v2
+clean: true
+plugins:
+  - protoc_builtin: python
+    out: src/protos
+
+inputs:
+  - module: buf.build/localize/localize:main
