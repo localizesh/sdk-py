@@ -6,5 +6,8 @@ setup(
     version=os.environ.get('VERSION'),
     description="Localize.sh SDK",
     package_dir={"localizesh_sdk": "src"},
-    long_description=open('README.md').read()
+    long_description=open('README.md').read(),
+    install_requires=[
+        'protobuf>=5.26.1',
+    ],
 )
