@@ -10,7 +10,7 @@ jobs:
       - uses: ./.github/actions/build
         with:
           version: ${{ github.event.release.tag_name }}
-      - run: twine upload -r dist/*
+      - run: twine upload dist/*
         env:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
