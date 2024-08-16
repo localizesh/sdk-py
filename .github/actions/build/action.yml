@@ -13,6 +13,7 @@ runs:
   steps:
     - uses: actions/setup-python@v5
       with:
+        python-version: '3.12' 
         cache: pip
         cache-dependency-path: setup.py
     - uses: bufbuild/buf-setup-action@v1.36.0
