@@ -1,12 +1,10 @@
 from setuptools import setup
 import os
 
-VERSION = os.environ.get('VERSION')
-
 setup(
     name='localizesh-sdk',
-    version=VERSION,
-    description="Sdk",
+    version=os.environ.get('VERSION'),
+    description="Localize.sh SDK",
     package_dir={"localizesh_sdk": "src"},
     long_description=open('README.md').read()
 )
