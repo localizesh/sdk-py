@@ -23,3 +23,5 @@ runs:
       shell: bash
     - run: VERSION=${{ inputs.version }} python setup.py sdist bdist_wheel
       shell: bash
+    - run: twine check dist/*
+      shell: bash
