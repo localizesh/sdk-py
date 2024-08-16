@@ -1,0 +1,24 @@
+name: Build
+description: Build
+
+inputs:
+  token:
+    description: GitHub token
+    default: ${{ github.token }}
+  version:
+    description: Build version
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-python@v5
+      with:
+        cache: pip
+        cache-dependency-path: setup.py
+    - uses: bufbuild/buf-setup-action@v1.36.0
+    - run: pip install setuptools twine
+      shell: bash
+    - run: buf generate
+      shell: bash
+    - run: VERSION=${{ inputs.version }} python setup.py sdist bdist_wheel
+      shell: bash
