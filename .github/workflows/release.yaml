@@ -11,3 +11,6 @@ jobs:
         with:
           version: ${{ github.event.release.tag_name }}
       - run: twine upload -r dist/*
+        env:
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
