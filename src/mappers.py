@@ -1,6 +1,6 @@
 import json
 from .types import Document
-from .protos.localize.segment_pb2 import Segment as ProtoSegment
+from .protos.localize.segment_pb2 import Segment as ProtoSegment, Attributes
 from .protos.localize.document_pb2 import Document as ProtoDocument
 from google.protobuf import struct_pb2
 
@@ -25,11 +25,12 @@ def from_proto_document(proto_document):
 
 
 def to_proto_segment(segment):
-    proto_segment = ProtoSegment(id=segment['id'], text=segment['text'])
+    tags = {}
     if 'tags' in segment:
         for tag_key, attrs in segment['tags'].items():
-            proto_segment.tags[tag_key].values.update(attrs['values'])
-    return proto_segment
+            tags[tag_key] = Attributes(values=attrs)
+
+    return ProtoSegment(id=segment['id'], text=segment['text'], tags=tags if tags else None)
 
 def to_proto_segments(segments):
     return [to_proto_segment(segment) for segment in segments]
