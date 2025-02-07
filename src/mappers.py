@@ -9,7 +9,7 @@ def from_proto_segment(proto_segment):
     segment = {'id': proto_segment.id,'text': proto_segment.text}
 
     if proto_segment.tags:
-        tags = {tag_key: {'values': dict(attrs.values)} for tag_key, attrs in proto_segment.tags.items()}
+        tags = {tag_key: dict(attrs.values) for tag_key, attrs in proto_segment.tags.items()}
         segment['tags'] = tags
     return segment
 
