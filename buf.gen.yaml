@@ -5,4 +5,4 @@ plugins:
     out: src/protos
 
 inputs:
-  - module: buf.build/localize/localize:main
+  - module: buf.build/localizesh/localize:main
